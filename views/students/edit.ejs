@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit students</title>
+    <!-- Page for editing existing students -->
+    <style>
+        
+        body{
+            font-family: 'Roboto', sans-serif;
+            margin: auto;
+        }
+       .title{
+           font-size: 300%;
+           text-align: center;
+       }
+        .main{
+            
+            
+            border: 2px solid black;
+            border-radius: 100px;
+            background-color: chartreuse;
+            margin: 10%;
+            margin: 10% ;
+            padding-bottom: 5%;
+}
+.main input,select{
+    display: flex;
+    flex-direction: column;
+  width: 30%;
+}
+.main-content{
+   
+    text-align: justify;
+    padding-left: 40%;
+}
+a{
+    text-decoration: none;
+    padding-left: 0%;
+    background-color: yellow;
+    padding: 1% 3% 1% 3%;
+    
+    border-radius: 20px;
+}
+a:hover{
+    color: blue;
+}
+.submit{
+    padding-left: 0%;
+    padding: 1% 3% 1% 3%;
+    background-color: yellow;
+    font-size: 100%;
+    border-radius: 20px;
+    border: none
+}
+.link{
+    
+    display: flex;
+    justify-content: space-around;
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+<h1 class="title">EDIT</h1>
+<div class="main-content">
+    <form action="/students/<%=student._id%>?_method=PUT" method="POST">
+    <label for="id">Id:</label>
+    <input type="number" name="id" id="id" placeholder="Student id" value="<%=student.id%>">  </br>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" placeholder="Student name" value="<%=student.name%> "></br>
+    <label for="surname">Surname:</label>
+    <input type="text" name="surname" id="surname" placeholder="Student surname" value="<%=student.surname%> "></br>
+    <label for="age">Type Age</label>
+    <input type="number" name="age" id="age" placeholder="Age" value="<%=student.age%> "></br>
+    <label for="gender">Gender:</label>
+    <select name="gender" id="gender" placeholder=".."> </br>
+        <option value=""></option>
+        <option value="female" <%= student.gender==='female'? 'selected' : '' %>>female</option>  
+        <option value="male" <%= student.gender==='male'? 'selected' : ''%>>male</option>
+    </select></br>
+    <label for="Field_of_study">Study Field:</label>
+    <input type="text" name="Field_of_study" id="Field_of_study" placeholder="Field of Study" value="<%=student.Field_of_study%>"></br>
+    <label for="study_degree">Degree:</label>
+    <input type="text" name="study_degree" id="study_degree" placeholder="Study Degree" value="<%= student.study_degree%> "> <br>
+    <label for="year_of_study">Year of Study:</label>
+    <input type="number" name="year_of_study" id="year_of_study" placeholder="Year of study" value="<%= student.year_of_study%> "> <br>
+</div>
+    <div class="link">
+        <button class="submit">Submit</button>
+    <a href="/students/<%=student._id %> ">CANCEL</a>
+    </div>
+    
+</form>
+
+</div>
+</body>
+</html>

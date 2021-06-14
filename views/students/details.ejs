@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= studentDetails.name  %> </title>
+    <style>body{
+        margin: auto;
+        
+    }
+.main{
+font-family: 'Roboto', sans-serif;
+text-align: center;
+border: 2px solid black;
+border-radius: 100px;
+background-color: chartreuse;
+margin: 10%;
+margin: 10% ;
+
+}
+.title{
+
+font-size: 550%;
+font-weight: bold;
+color: black
+}
+ul{
+text-align: left;
+display: inline-block;
+}
+a{
+text-decoration: none;
+color: black;
+}
+a:hover{
+color: blue;
+}
+li{
+font-size: 150%;
+}
+.link{
+font-size: 150%;
+font-weight: bold;
+padding-bottom: 5%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding-top: 3%;
+
+}
+.delete{
+   
+    padding: 5% 6% 5% 6%;
+    margin-right: 30%;
+    background-color: yellow;
+    font-size: 150%;
+    border-radius: 20px;
+    border: none
+}
+.delete:hover{
+    background-color: red;
+}
+</style>
+</head>
+<body>
+    <div class="main">
+    <h1><%= studentDetails.name  %> </h1>
+    <ul>
+        <li> ID: <%= studentDetails.id  %> </li>
+        <li> Name: <%= studentDetails.name  %> </li>
+        <li> Surname: <%= studentDetails.surname  %> </li>
+        <li> Age: <a href="/students?age=<%=studentDetails.age %> "><%=studentDetails.age  %> </a> </li>
+        <li> gender: <%= studentDetails.gender  %> </li>
+        <li> Field of study: <%= studentDetails.Field_of_study  %> </li>
+        <li>Study degree: <%= studentDetails.study_degree  %> </li>
+        <li>Year of study: <%= studentDetails.year_of_study  %> </li>
+    </ul>
+    <div class="link">
+        <div class="all-st-details-butbox">
+    <a href="/students">ALL STUDENTS</a> 
+</div>
+    <form action="/students/<%=studentDetails._id%>?_method=DELETE" method="POST">
+        <div class="delete-butbox">
+        <button class="delete">DELETE</button>
+    </div>
+        </form>
+        <div class="edit-butbox">
+    <a href="/students/<%=studentDetails._id %>/edit">EDIT INFORMATION</a>
+</div>
+</div>
+    
+</div>
+</body>
+</html>

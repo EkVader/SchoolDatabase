@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+   <title>Students database</title>
+    
+    <style>
+        body{
+            margin: auto;
+            
+        }
+.main{
+font-family: 'Roboto', sans-serif;
+text-align: center;
+border: 2px solid black;
+border-radius: 100px;
+background-color: chartreuse;
+margin: 10%;
+margin: 10% ;
+
+}
+.title{
+   
+    font-size: 550%;
+    font-weight: bold;
+    color: black
+}
+ul{
+    text-align: left;
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: blue;
+}
+li{
+    font-size: 150%;
+}
+.link{
+    font-size: 150%;
+    font-weight: bold;
+    padding-bottom: 5%;
+    display: flex;
+    
+   justify-content: space-around;
+    
+}
+   
+
+    </style>
+</head>
+<body>
+    <div class="main">
+    
+     
+    <h1 class="title" ><%= age===''? '': `${age} Years Old` %> Students</h1>
+<div class="list">
+    <ul class="xd">
+        <% for (let Student of students) {%>
+            <li> <a href="/students/<%=Student._id %>"><%= Student.name%> <%=Student.surname  %> </a></li>
+        <%} %> 
+    </ul>
+</div> <br>
+    <div class="link">
+    <a href="/students/new">ADD A STUDENT</a> 
+    <a href="/students">ALL STUDENTS</a>
+    
+</div>
+</div>
+</body>
+</html>
