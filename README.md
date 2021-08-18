@@ -1,4 +1,5 @@
-# Students_Database
+# SchoolDatabase
+
 This is my first little project with JavaScript with addition of Node.js, Mongoose, MongoDB and Express.
 There are some things unfinished besides ugly styling.
 On JavaScript site for now there is no validation for input data, please do not add text in inputs where you need to put a number, also on Edit Page, please do not leave any input without data, i'll fix that.
