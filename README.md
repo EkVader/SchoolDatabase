@@ -4,7 +4,7 @@ This is my first little project with JavaScript with addition of Node.js, Mongoo
 There are some things unfinished besides ugly styling.
 On JavaScript site for now there is no validation for input data, please do not add text in inputs where you need to put a number, also on Edit Page, please do not leave any input without data, i'll fix that.
 
-Download all files and extract them.
+Download all files and extract them. Rename the project folder to "SchoolDatabase" otherwise it wont run properly.
 To run an app you need to have Node.js installed. Through your Command Prompt you need to go to a project directory and type "npm install" this will create node_modules folder with 
 all npm packages which are necessary for this app to run.
 
